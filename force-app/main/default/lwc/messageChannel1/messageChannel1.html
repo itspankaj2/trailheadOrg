@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Sender" icon-name="standard:account">
+        <lightning-button variant="brand" slot="actions" label="Send Hello" title="Send Hello" onclick={handleClick}></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="text" variant="standard" name="Message" label="Message" value={message} onchange={onchange} placeholder="type here..."></lightning-input>
+        </div>
+        
+        
+        <p slot="footer">Lightning message : Sender Example</p>
+    </lightning-card>
+</template>
