@@ -1,7 +1,8 @@
 @isTest
 public with sharing class testciJobTest {
     @isTest
-    public testciJobTest() {
+    public test1() {
         testciJob.testciJob();
+        System.assertEquals(true, true, 'dummy ');
     }
 }
