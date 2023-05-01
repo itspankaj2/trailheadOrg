@@ -1,4 +1,4 @@
-name: SFDX Test Run on Push
+name: SFDX deploy to org
 
 on: [push]
 
@@ -11,5 +11,9 @@ jobs:
       - uses: sfdx-actions/setup-sfdx@v1
         with:
           sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
-      - name: sfdx-test-run
-        run: sfdx force:apex:test:run -l RunLocalTests -w 30
+      - name: deploy
+        run: |
+          sfdx plugins:install sfdx-git-delta
+          sfdx sgd:source:delta --to "HEAD" --from "HEAD~1" --output "."
+          sfdx force:source:deploy -x package/package.xml --postdestructivechanges destructiveChanges/destructiveChanges.xml
+          
