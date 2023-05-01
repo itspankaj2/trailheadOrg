@@ -13,7 +13,7 @@ jobs:
           sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
       - name: deploy
         run: |
-          sfdx plugins:install sfdx-git-delta
+          sfdx plugins:install sfdx-git-delta -y
           sfdx sgd:source:delta --to "HEAD" --from "HEAD~1" --output "."
           sfdx force:source:deploy -x package/package.xml --postdestructivechanges destructiveChanges/destructiveChanges.xml
           
