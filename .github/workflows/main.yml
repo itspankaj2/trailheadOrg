@@ -1,6 +1,8 @@
 name: SFDX deploy to org
 
 on: [push]
+  branches:
+    - 'main'
 
 jobs:
   test:
