@@ -1,0 +1,40 @@
+<template>
+  <lightning-card title="Account List">
+    <template if:true={accounts}>
+      <ul class="slds-list_ordered">
+        <template for:each={accounts} for:item="account">
+          <li
+            key={account.Id}
+            onclick={handleAccountClick}
+            data-id={account.Id}
+          >
+            {account.Name}
+          </li>
+        </template>
+      </ul>
+    </template>
+    <template if:true={selectedAccount}>
+      <lightning-card title="Related Contacts">
+        <template for:each={selectedAccount.Contacts} for:item="contact">
+          <p key={contact.Id}>{contact.Name}</p>
+        </template>
+      </lightning-card>
+    </template>
+  </lightning-card>
+  <lightning-card title="Account List Using Datatable">
+    <lightning-datatable
+      key-field="id"
+      data={accountData}
+      columns={accountColumns}
+      onrowaction={handleRowAction}
+    >
+    </lightning-datatable>
+
+    <lightning-datatable
+      key-field="id"
+      data={contactData}
+      columns={contactColumns}
+    >
+    </lightning-datatable>
+  </lightning-card>
+</template>
