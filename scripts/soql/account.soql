@@ -3,4 +3,4 @@
 //     query text and running the command:
 //     SFDX: Execute SOQL Query with Currently Selected Text
 
-SELECT Id, Name FROM Account
+SELECT Id, Name, (SELECT id, Name FROM Properties__r ) FROM Property__c where id = 'a0V1000000RbIV8EAN'

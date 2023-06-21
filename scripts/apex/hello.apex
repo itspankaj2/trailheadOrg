@@ -11,3 +11,9 @@ System.debug('My name is ' + tempvar);
 
 Database.SaveResult result = StreamingApiDemo.sendMessage('Hello test 1');
 System.debug(result);
+
+Property__c property = new Property__c(
+    Name = 'Not Admin',
+    State__c = 'IN'
+);
+insert property;
