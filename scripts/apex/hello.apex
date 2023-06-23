@@ -17,3 +17,7 @@ Property__c property = new Property__c(
     State__c = 'IN'
 );
 insert property;
+
+ExampleDataApi.getAccountInfo();
+
+Database.UnitOfWork

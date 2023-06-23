@@ -4,3 +4,4 @@
 //     SFDX: Execute SOQL Query with Currently Selected Text
 
 SELECT Id, Name, (SELECT id, Name FROM Properties__r ) FROM Property__c where id = 'a0V1000000RbIV8EAN'
+SELECT ID,Alias, TimeZoneSidKey, LocaleSidKey, EmailEncodingKey, LanguageLocaleKey from User
