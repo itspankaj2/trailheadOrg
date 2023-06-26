@@ -22,6 +22,15 @@ public abstract with sharing class TestUtility {
             LanguageLocaleKey = 'en_US'
         );
 
+        Database.SaveResult result = Database.insert(
+            admin,
+            true,
+            AccessLevel.SYSTEM_MODE
+        );
+
+        if (!result.isSuccess()) {
+            Assert.fail('Failed to insert admin account, It should not happen');
+        }
         return admin;
     }
 }
